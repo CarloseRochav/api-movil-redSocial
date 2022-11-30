@@ -6,10 +6,35 @@ POST http://localhost:3030/create-user HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Carlos",
-    "lastname": "Rocha",
+    "name": "Mario",
+    "lastname": "Capistran",
+    "email":"mario@capistran.com",
+    "password":"galloDeOro2022"
+}
+
+
+###Get List Users
+GET http://localhost:3030/list-users HTTP/1.1
+
+###Find User
+POST http://localhost:3030/find-user HTTP/1.1
+content-type: application/json
+
+{    
     "email":"carlos@rocha.com",
     "password":"galloDeOro2022"
 }
+
+
+
+###Create Post
+POST http://localhost:3030/create-post HTTP/1.1
+content-type: application/json
+
+{    
+    "email":"carlos@rocha.com",
+    "post":"Hoy murio mi padre. Estoy destrozado"
+}
+
 
 

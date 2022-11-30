@@ -3,6 +3,7 @@ const app = express();//
 const port = 3030;
 const connection = require("./db/db");//Uso de la connection configurada
 const userController = require("./controllers/userController");
+const postController = require("./controllers/postController");
 
 
 //Uso de bodyParser
@@ -20,6 +21,13 @@ app.get("/", (req, res) => {
 
 //Ruta de Postear Usuario
 app.post("/create-user",userController.createUser);
+//ruta para consultar usuarios
+app.get("/list-users",userController.getUserslist);
+//Ruta para autentificar
+app.post("/find-user",userController.signin);
+
+//Ruta para hacer una publicacion
+app.post("/create-post",postController.newPost)
 
 
 console.log("Archivo ejecutado")
