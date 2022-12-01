@@ -151,18 +151,19 @@ userController.signin=async (req,res)=>{
                     isLogged:user.islogged
                 });
         })
-
-
-
     });
 
 }catch(err){
     console.log("Error : "+err)
     res.json(err);
+} 
 }
 
-    
 
+userController.logOff = (req,res)=>{
+
+
+    
 }
 
 

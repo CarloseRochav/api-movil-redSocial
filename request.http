@@ -6,9 +6,9 @@ POST http://localhost:3030/create-user HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Mario",
-    "lastname": "Capistran",
-    "email":"mario@capistran.com",
+    "name": "Carlos",
+    "lastname": "Rocha",
+    "email":"carlos@rocha.com",
     "password":"galloDeOro2022"
 }
 
@@ -16,7 +16,7 @@ content-type: application/json
 ###Get List Users
 GET http://localhost:3030/list-users HTTP/1.1
 
-###Find User
+###Find User / Sign In
 POST http://localhost:3030/find-user HTTP/1.1
 content-type: application/json
 

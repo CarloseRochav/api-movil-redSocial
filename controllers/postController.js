@@ -3,15 +3,19 @@ const con = require("../db/db");
 let postController={}
 
 
-postController.newPost=(req,res)=>{
+postController.newPost=async (req,res)=>{
 
-    const data =req.body
+    const data = await req.body
     const email = data.email;
 
     const userQuery = `SELECT * FROM USERS WHERE EMAIL='${email}'`;
     con.query(userQuery,(err,result,fields)=>{
 
         const user = result[0];
+
+        if(user==null)
+            return console.log("Asegurate de contar con una cuenta")
+
         if(!user.islogged==true){
             return console.log("Debe estar loggeado")
         }
