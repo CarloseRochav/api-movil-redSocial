@@ -30,6 +30,8 @@ app.post("/logoff",userController.logOff);
 
 //Ruta para hacer una publicacion
 app.post("/create-post",postController.newPost)
+//Ruta para obtener las publicaciones
+app.get("/get-posts",postController.getPosts)
 
 
 console.log("Archivo ejecutado")

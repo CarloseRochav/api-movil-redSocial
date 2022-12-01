@@ -4,15 +4,7 @@ const { emit } = require("../db/db");
 const con = require("../db/db");
 
 
-let userController = {}
-//Custom error
-// const customError = (code = 500, msg = "Error in the system") => {
-//     const error = new Error();    
-//     error.code=code;
-//     error.msg =msg;
-//     return error;
-//   };
-  
+let userController = {} 
 
 
 //Creater User
@@ -31,7 +23,10 @@ userController.createUser = async  (req,res)=>{
             //if (err) throw err;
             //var sql = "INSERT INTO customers (name, address) VALUES ('Michelle', 'Blue Village 1')";
             con.query(createUserSQL,[email,password], function (err, result) {
-              if (err) throw err;
+              if (err && err.errno==1062) {
+              return res.json({error:"Este correo ya se encuentra registrado"});
+              }
+              
               console.log("1 record inserted, ID: " + result);
               
                 res.json({

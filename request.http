@@ -6,9 +6,9 @@ POST http://localhost:3030/create-user HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Carlos",
-    "lastname": "Rocha",
-    "email":"carlos@rocha.com",
+    "name": "Omar",
+    "lastname": "Molina",
+    "email":"omar@molinasoXd.com",
     "password":"galloDeOro2022"
 }
 
@@ -41,8 +41,11 @@ content-type: application/json
 
 {    
     "email":"carlos@rocha.com",
-    "post":"Hoy murio mi padre. Estoy destrozado"
+    "post":"Fluyan mis lagrimas dijo el policia"
 }
+
+###Get Posts
+GET http://localhost:3030/get-posts HTTP/1.1
 
 
 
