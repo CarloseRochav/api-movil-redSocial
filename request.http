@@ -25,6 +25,14 @@ content-type: application/json
     "password":"galloDeOro2022"
 }
 
+###LogOff
+POST http://localhost:3030/logoff HTTP/1.1
+content-type: application/json
+
+{    
+    "email":"carlos@rocha.com"
+}
+
 
 
 ###Create Post

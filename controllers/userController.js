@@ -162,7 +162,31 @@ userController.signin=async (req,res)=>{
 
 userController.logOff = (req,res)=>{
 
+    const data = req.body;
+    const email = data.email;
 
+    const queryLogOff = "UPDATE USERS SET islogged=false WHERE email='"+email+"'";
+    
+
+    try{
+    con.query(queryLogOff,(err,result,field)=>{
+        
+        //if(result[0].islogged==false)
+        //return console.log(`Usuario : ${email} no se encuentra con una sesion activa`);               
+        console.log(`Usuario : ${email} ha cerrado sesion`);       
+        return res.json({
+            code:200,
+            email:email,
+            message:"Has cerrado sesion"
+
+        })
+
+    })
+
+    }catch(err){        
+            return console.log("Error = > "+err);
+
+    }
     
 }
 

@@ -25,6 +25,8 @@ app.post("/create-user",userController.createUser);
 app.get("/list-users",userController.getUserslist);
 //Ruta para autentificar
 app.post("/find-user",userController.signin);
+//Ruta para cerrar sesion
+app.post("/logoff",userController.logOff);
 
 //Ruta para hacer una publicacion
 app.post("/create-post",postController.newPost)
