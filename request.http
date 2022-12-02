@@ -48,4 +48,15 @@ content-type: application/json
 GET http://localhost:3030/get-posts HTTP/1.1
 
 
+###Create Comment
+POST http://localhost:3030/create-comment HTTP/1.1
+content-type: application/json
+
+{    
+    "id":1,
+    "email":"mario@capistran.com",
+    "idPost":2,
+    "Content":"Dios te bendiga"
+}
+
 

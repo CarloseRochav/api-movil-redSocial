@@ -4,19 +4,16 @@ const port = 3030;
 const connection = require("./db/db");//Uso de la connection configurada
 const userController = require("./controllers/userController");
 const postController = require("./controllers/postController");
+const commentController = require("./controllers/commentController");
 
 
 //Uso de bodyParser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
 //Ruta de Hola Mundo
 app.get("/", (req, res) => {
-
     res.send("Hello World");
-
 })
 
 //Ruta de Postear Usuario
@@ -32,6 +29,8 @@ app.post("/logoff",userController.logOff);
 app.post("/create-post",postController.newPost)
 //Ruta para obtener las publicaciones
 app.get("/get-posts",postController.getPosts)
+//Ruta para crear un comentario
+app.post("/create-comment",commentController.createComment);
 
 
 console.log("Archivo ejecutado")
@@ -46,10 +45,7 @@ app.listen(port, () => {
             console.error('error connecting: ' + err.stack);
             return;
         }
-
         console.log('connected as id ' + connection.threadId);
     });
-
-
 })
 
