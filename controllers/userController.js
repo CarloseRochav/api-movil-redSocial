@@ -45,9 +45,10 @@ userController.createUser = async  (req,res)=>{
             code:501,
             msg:` Error from api : ${err}`
         })
-    }finally {
-        if (con) return con.end();
-        }    
+    }
+    // finally {
+    //     if (con) return con.end();
+    //     }    
 }
 
 
