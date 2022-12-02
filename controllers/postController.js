@@ -26,27 +26,20 @@ postController.newPost=async (req,res)=>{
         POSTS (ID_USER,DATE_TIME,CONTENT) 
         VALUES(${user.ID},curdate(),"${post}")`
         
-        con.query(insertPost,(err,result,fields)=>{
-            if(err) return console.log(err);
+            con.query(insertPost,(err,result,fields)=>{
+                if(err) return console.log(err);
 
-            return res.json({message:result});
-
-
-        })
-        
+                return res.json({message:result});
+            })        
     })
-
 }
 
 
 postController.getPosts=(req,res)=>{
 
     const getPostsQuery = "SELECT ID,ID_USER,DATE_TIME,CONVERT(content USING utf8) CONTENIDO FROM POSTS"
-
-
-
+    
     try{
-
     con.query(getPostsQuery,(err,result,fields)=>{
 
         return res.json({Publicaciones:result})
@@ -55,9 +48,6 @@ postController.getPosts=(req,res)=>{
     }catch(err){
         return err;
     }
-
-
-
 
 }
 

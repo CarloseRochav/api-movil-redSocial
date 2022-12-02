@@ -6,9 +6,9 @@ POST http://localhost:3030/create-user HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Omar",
-    "lastname": "Molina",
-    "email":"omar@molinasoXd.com",
+    "name": "Jorge",
+    "lastname": "Perez",
+    "email":"jorge@noyola.com",
     "password":"galloDeOro2022"
 }
 
