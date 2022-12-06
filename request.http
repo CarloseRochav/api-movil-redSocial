@@ -59,4 +59,8 @@ content-type: application/json
     "Content":"Dios te bendiga"
 }
 
+###Listar todos los comententarios
+GET http://localhost:3030/get-comments HTTP/1.1
 
+###Obtener publicaciones de un usuario
+GET http://localhost:3030/get-posts/5 HTTP/1.1

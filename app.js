@@ -31,6 +31,10 @@ app.post("/create-post",postController.newPost)
 app.get("/get-posts",postController.getPosts)
 //Ruta para crear un comentario
 app.post("/create-comment",commentController.createComment);
+//Ruta pata listar todos los comentarios
+app.get("/get-comments",commentController.getListComments);
+//Ruta para obetener posts de un usuario
+app.get("/get-posts/:userId",postController.getPostsByAnUser);
 
 
 console.log("Archivo ejecutado")

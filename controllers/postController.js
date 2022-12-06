@@ -51,4 +51,40 @@ postController.getPosts=(req,res)=>{
 
 }
 
+postController.getPostsByAnUser=(req,res)=>{
+
+    const userId = req.params.userId;
+
+    const postByUser= `SELECT EMAIL, CONVERT(content USING utf8) Contenido FROM POSTS 
+    INNER JOIN USERS ON POSTS.ID_USER = USERS.ID 
+    WHERE ID_USER=${userId}`
+
+
+    con.query(postByUser,(err,result,fields)=>{
+        
+
+        let posts = Array();
+        //Result loop
+            // if there is no error, you have the result
+            // iterate for all the rows in result
+        Object.keys(result).forEach(function(key) {
+            var row = result[key];            
+            
+            posts.push(row.Contenido)
+            console.log(row.Contenido)
+          });       
+
+
+        const userEmail = result[0].EMAIL;
+
+        return res.json({  
+            user:userEmail,          
+            Posts:posts            
+        })
+
+
+    })
+
+}
+
 module.exports=postController;

@@ -13,8 +13,7 @@ commentController.createComment=(req,res)=>{
             email:data.email,
             idPost:data.idPost,
             content:data.Content
-    }  
-    
+    }      
 
     const findUser = `SELECT * FROM USERS WHERE EMAIL='${user.email}'`
     //const findUser = `SELECT * FROM USERS WHERE EMAIL="carlos@rocha.com"`
@@ -39,10 +38,31 @@ commentController.createComment=(req,res)=>{
         })
 
     })
+
+
+    //Listar Comentarios
+
     
     //return res.json(user);    
     
 }
+
+commentController.getListComments=(req,res)=>{
+        const data = req.body;
+
+        const getCommentsQuery="SELECT * FROM COMMENTS";
+
+        con.query(getCommentsQuery,(err,result,fields)=>{
+            
+            //console.log(result);
+
+            
+            return res.json({result})
+        
+
+        })
+}
+
 
 
 //Exportar objeto
