@@ -51,9 +51,14 @@ postController.getPosts=(req,res)=>{
 
 }
 
+
 postController.getPostsByAnUser=(req,res)=>{
 
     const userId = req.params.userId;
+
+    // const postByUser= `SELECT EMAIL, CONVERT(content USING utf8) Contenido FROM POSTS 
+    // INNER JOIN USERS ON POSTS.ID_USER = USERS.ID 
+    // WHERE ID_USER=${userId}`
 
     const postByUser= `SELECT EMAIL, CONVERT(content USING utf8) Contenido FROM POSTS 
     INNER JOIN USERS ON POSTS.ID_USER = USERS.ID 

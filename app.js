@@ -35,6 +35,8 @@ app.post("/create-comment",commentController.createComment);
 app.get("/get-comments",commentController.getListComments);
 //Ruta para obetener posts de un usuario
 app.get("/get-posts/:userId",postController.getPostsByAnUser);
+//Ruta para obtener comentarios de una publicacion
+app.get("/get-comments/:postId",commentController.getCommnetsByAPost)
 
 
 console.log("Archivo ejecutado")
