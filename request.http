@@ -2,13 +2,14 @@
 GET http://localhost:3030/ HTTP/1.1
 
 ### Create new User
-POST http://localhost:3030/create-user HTTP/1.1
+#POST http://localhost:3030/create-user HTTP/1.1
+POST http://10.23.102.97:3030/create-user HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Jorge",
-    "lastname": "Perez",
-    "email":"jorge@noyola.com",
+    "name": "Jose",
+    "lastname": "Gonzalez",
+    "email":"jose@gonzales.com",
     "password":"galloDeOro2022"
 }
 

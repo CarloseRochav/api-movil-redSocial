@@ -60,7 +60,7 @@ commentController.getListComments=(req,res)=>{
 }
 
 
-//Obtener los comentarios que tiene una publicacion
+//Obtener los comentarios que tiene una publicacion 
 commentController.getCommnetsByAPost=(req,res)=>{
 
     const postId = req.params.postId;
@@ -98,7 +98,6 @@ commentController.getCommnetsByAPost=(req,res)=>{
             Publicacion:result[0].Publicacion,
             Comentarios:comments
           });
-
     })
     
 

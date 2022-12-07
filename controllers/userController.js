@@ -31,7 +31,9 @@ userController.createUser = async  (req,res)=>{
               
                 res.json({
                     code:201,
-                    msg :` Resultado ${result} `,           
+                    msg :` Usuario registrado `,
+                    email:email,
+                    password:password           
         
                     })
             });
